@@ -38,3 +38,28 @@ criado_em datetime not null default current_timestamp,
 atualizado_em datetime not null default current_timestamp on update current_timestamp,
 foreign key (categoria_id) references categorias(id) on delete set null
 );
+-- categorias inseridas 
+insert into categorias (nome, descricao) values
+('computadores', 'Notebooks, desktops'),
+('componentes', 'Placas-mãe, processadores, memórias'),
+('perifericos', 'Mouse, Teclado, MousePad'),
+('monitores', '60Hz, 90Hz, 120Hz'),
+('redes', 'roteadores, cabo-de-redes'),
+('fontes', '400W, 500W, 650W'),
+('impressoras', 'jato-de-tinta, A-Laser, matricial'),
+('armazenamento', 'SSD, SSD-SATA, HD-Externo'),
+('outros', 'ETC');
+
+-- movimentações de estoque (ENTRADA / SAIDA DE ESTOQUE)
+create table movimentacoes_estoque (
+id int auto_increment primary key,
+produto_id int not null,
+usuario_id int not null,
+tipo ENUM('entrada', 'saida') not null,
+quantidade int not null,
+motivo varchar(250),
+status ENUM('pendente', 'validado', 'rejeitado') not null default 'validado', -- usado na VALIDAÇÃO DA SAÍDA
+criado_em  datetime not null default current_timestamp,
+foreign key (produto_id) references produtos(id) on delete cascade,
+foreign key (usuario_id) references login(id_usuario)
+);
