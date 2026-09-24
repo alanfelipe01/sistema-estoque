@@ -63,3 +63,16 @@ criado_em  datetime not null default current_timestamp,
 foreign key (produto_id) references produtos(id) on delete cascade,
 foreign key (usuario_id) references login(id_usuario)
 );
+-- CONTROLE DE QUALIDADE
+create table controle_qualidade (
+id int auto_increment primary key,
+produto_id int not null,
+movimentacao_id int,
+usuario_id int not null,
+status enum('aprovado','reprovado') not null,
+observacao varchar(255),
+criado_em datetime not null default current_timestamp,
+foreign key (produto_id) references produtos(id) on delete cascade,
+foreign key (movimentacao_id) references movimentacoes_estoque(id) on delete set null,
+foreign key (usuario_id) references login(id_usuario)
+);
