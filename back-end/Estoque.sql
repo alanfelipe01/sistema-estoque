@@ -76,3 +76,38 @@ foreign key (produto_id) references produtos(id) on delete cascade,
 foreign key (movimentacao_id) references movimentacoes_estoque(id) on delete set null,
 foreign key (usuario_id) references login(id_usuario)
 );
+
+-- VIEW: HITÓRICO COMPLETO (movimentações + qualidade)
+create or replace view historico_completo AS
+select
+'movimentaçao' AS origem,
+m.id,
+m.produto_id,
+p.nome AS produto_nome,
+m.tipo AS acao,
+m.quantidade,
+m.status,
+m.usuario_id,
+u.usuario AS usuario_nome,
+m.criado_em
+from movimentacoes_estoque m
+join produtos p ON p.id = m.produto_id
+join Login u ON u.id_usuario = m.usuario_id
+
+UNION ALL
+
+SELECT
+'qualidade' AS origem,
+q.id,
+q.produto_id,
+p.nome AS produto_nome,
+q.status AS acao,
+NULL AS quantidade,
+q.status,
+q.usuario_id,
+u.usuario AS usuario_nome,
+q.criado_em
+FROM controle_qualidade q
+JOIN produtos p ON p.id = q.produto_id
+JOIN Login u ON u.id_usuario = q.usuario_id
+ORDER BY criado_em DESC;
