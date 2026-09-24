@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+</head>
+<body>
+    <h1>Entre em Contato</h1>
+    <p>Preencha o formulárioo abaixo e envie sua mensagem</p>
+    <br>
+    <form action="nome">
+        <label for="nome" style="color: red;">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Degite seu nome completo">
+        <!--Form do nome-->
+    </form>
+    <br>
+    <form action="E-mail">
+        <label for="E-mail">E-mail</label>
+        <input type="text" id="E-mail" name="E-mail" placeholder="Digite seu e-mail">
+        <!--Form do E-mail-->
+    </form>
+    <br>
+    <form action="Telefone">
+        <label for="Telefone">Telefone</label>
+        <input type="number" id="Telefone" name="Telefone" placeholder="(85)99999-9999">
+        <!--Form do telefone-->
+    </form>
+    <br>
+    <form action="Assunto">
+        <label for="Assunto">Assunto</label>
+        <select name="Assunto" id="Assunto">
+            <option value="" selected disabled>Selecione um assunto</option>
+            <option value="">Solicitação de orçamento</option>
+            <option value="">Suporte técnico</option>
+            <option value="">Desenvolvimento de sistema</option>
+            <option value="">Consultoria</option>
+            <option value="">Outro assunto</option>
+            <!--Form de opçoes-->
+        </select>
+    </form>
+    <br>
+    <form action="Mensagem">
+        <label for="Mensagem">Mensagem</label><br>
+        <textarea 
+        name="Mensagem"
+         id="Mensagem"
+         rows="4"
+         cols="60"
+         placeholder="Digite uma mensagem"
+        ></textarea>
+    </form>
+    <form action="botao">
+        <input type="submit"  value="Enviar mensagem">
+        <input type="submit" value="Limpar">
+    </form>
+</body>
+</html>
