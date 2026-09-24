@@ -8,40 +8,46 @@
 <body>
     <h1> Visão Geral </h1>
     <!----h1 é o titulo principal da pagina--->
-    <section>
-        <!----section agrupa conteudos relacionados--->
-        <h2>Métricas Essenciais</h2>
-        <!----h2 é o subtitulo--->
-    <div>
-        <!---div é uma caixa generica usada aqui para separar cada metrica no seu bloco--->
-                <h3>Receita Total</h3>
-                <!--- h3 é cada é o rotulo de cada metrica--->
-                <p>R$ 1.999.99,00
-            
-                </p>
+   <section class="metricas">
+     <!----section agrupa conteudos relacionados--->
+    <div class="card card-alerta">
+         <!---div é uma caixa generica usada aqui para separar cada metrica no seu bloco--->
+        <h3>Produtos com Estoque Baixo</h3>
+        <!--- h3 é cada é o rotulo de cada metrica--->
+        <p class="numero">0</p>
     </div>
 
-    <div>
-        <h3>Total de Vendas</h3>
-        <p></p>
+    <div class="card card-info">
+        <h3>Quantidade de Produtos no Estoque</h3>
+        <p class="numero">0</p>
     </div>
 
-    <div>
-        <h3>Novos Clientes</h3>
-        <p></p>
+    <div class="card card-sucesso">
+        <h3>Custo Total de Produtos</h3>
+        <p class="numero">R$ 0</p>
     </div>
+</section>
 
-    <div>
-        <h3>Produtos em Estoque</h3>
-        <p></p>
+<section class="atalhos">
+    <h2>Atalhos</h2>
+
+    <div class="atalhos-grid">
+        <div class="atalho-card">
+            <h3>Produtos</h3>
+            <p>Cadastro de produtos</p>
+        </div>
+
+        <div class="atalho-card">
+            <h3>Entradas</h3>
+            <p>Gerenciar entradas de produtos no estoque</p>
+        </div>
+
+        <div class="atalho-card">
+            <h3>Saídas</h3>
+            <p>Gerenciar saídas de produtos no estoque</p>
+        </div>
     </div>
-
-    <div>
-        <h3>Itens em Alerta</h3>
-        <p></p>
-    </div>
-
-    </section>
+</section>
     
 </body>
 </html>
