@@ -81,6 +81,23 @@
       </div>
     </div>
   </div>
+  <!--Demonstração no front enquanto o backend ainda não ta pronto-->
+  <script>
+    document.getElementById('stripe-login').addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o recarregamento da página
+
+        // Captura os valores usando o atributo 'name' definido no seu HTML
+        const user = document.querySelector('input[name="usuario"]').value;
+        const pass = document.querySelector('input[name="password"]').value;
+
+        // Validação simples para a demonstração
+        if (user === 'Alan' && pass === '0800') {
+            window.location.href = 'pages/dash.html';
+        } else {
+            alert('Usuário ou senha incorretos.');
+        }
+    });
+  </script>
 </body>
 
 </html>
