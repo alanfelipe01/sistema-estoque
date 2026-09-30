@@ -1,0 +1,291 @@
+/* ==========================================================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+:root {
+    --primary-blue: #0284c7;       /* Azul principal vibrante */
+    --primary-dark: #0369a1;       /* Azul escuro para hover */
+    --bg-main: #f0f9ff;            /* Fundo suave em tom azul/gelo */
+    --bg-card: #ffffff;            /* Fundo dos cards brancos */
+    --text-main: #0f172a;          /* Texto escuro legível */
+    --text-muted: #64748b;         /* Texto secundário */
+    --border-color: #e2e8f0;       /* Bordas sutis */
+    --focus-ring: rgba(2, 132, 199, 0.25);
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+    padding-bottom: 40px;
+}
+
+/* ==========================================================================
+   CABEÇALHO E NAVEGAÇÃO
+   ========================================================================== */
+.main-header {
+    background-color: #0c4a6e;    /* Azul marinho profundo */
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #38bdf8;               /* Azul ciano para a marca */
+    letter-spacing: -0.5px;
+}
+
+.brand p {
+    font-size: 0.85rem;
+    color: #bae6fd;
+}
+
+.user-info p {
+    font-size: 0.85rem;
+    color: #e0f2fe;
+}
+
+.user-info span {
+    color: #7dd3fc;
+    font-weight: 500;
+}
+
+/* Menu de Navegação */
+.main-nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+}
+
+.main-nav a {
+    display: block;
+    padding: 12px 18px;
+    color: #e0f2fe;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-bottom-color: #38bdf8;
+}
+
+/* ==========================================================================
+   ESTRUTURA PRINCIPAL (CONTAINER & CARDS)
+   ========================================================================== */
+.container {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.card-section {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 32px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-section h2 {
+    font-size: 1.35rem;
+    color: #0369a1;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e0f2fe;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Fieldset e Legend */
+fieldset {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+    background-color: #f8fafc;
+}
+
+legend {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0284c7;
+    padding: 0 10px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Grid Layout para os Formulários */
+.form-grid fieldset {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Estilo das Labels e Entradas de Dados */
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    background-color: #ffffff;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Foco de Inputs */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+::placeholder {
+    color: #94a3b8;
+}
+
+/* ==========================================================================
+   BOTÕES E AÇÕES
+   ========================================================================== */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);
+}
+
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: #475569;
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e1;
+    color: #1e293b;
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+.main-footer {
+    text-align: center;
+    padding: 24px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 40px;
+}
+
+.main-footer p {
+    margin-bottom: 4px;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================================================== */
+@media (max-width: 640px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .card-section {
+        padding: 20px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

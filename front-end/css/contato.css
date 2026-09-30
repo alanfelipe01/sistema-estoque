@@ -1,0 +1,155 @@
+/* Reset básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #0f172a; /* Fundo escuro moderno */
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container do Formulário */
+.contact-container {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+/* Cabeçalho */
+.form-header {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.form-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.form-header p {
+    font-size: 0.95rem;
+    color: #94a3b8;
+}
+
+/* Estilização dos Campos */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #e2e8f0;
+}
+
+/* Inputs, Selects e Textarea */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Placeholder e opções do select */
+::placeholder {
+    color: #64748b;
+}
+
+select option {
+    background-color: #1e293b;
+    color: #ffffff;
+}
+
+/* Estado de Foco (quando o usuário clica no campo) */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #6366f1; /* Destaque roxo/azul tecnológico */
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+/* Botões */
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #6366f1;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #4f46e5;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid #475569;
+    color: #cbd5e1;
+}
+
+.btn-secondary:hover {
+    background-color: #334155;
+    color: #ffffff;
+}
+
+/* Adaptabilidade para telas menores (Responsivo) */
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 24px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}

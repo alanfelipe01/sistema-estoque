@@ -2,53 +2,65 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Estoque - Cadastro, Entrada e Saída</title>
+    <!-- Fonte Google Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/cadastro.css">
+    <a href="front-end/pages/cadastro"></a>
 </head>
 <body>
 
-<header>
-    <h1>Sistema de Estoque</h1>
-    <p>Sistema de Gestão de Estoque</p>
-    <p>Usuário logado: Administrador</p>
-    <p>Data de acesso: 23/09/2026</p>
+<header class="main-header">
+    <div class="header-content">
+        <div class="brand">
+            <h1>techFlow</h1>
+            <p>Sistema de Gestão de Estoque</p>
+        </div>
+        <div class="user-info">
+            <p><span>Usuário:</span> </p>
+            <p><span>Data:</span> </p>
+        </div>
+    </div>
 
-    <nav>
+    <nav class="main-nav">
         <ul>
-            <li><a href="#cadastro-produto">Cadastro de Produto</a></li>
+            <li><a href="#cadastro-produto" class="active">Cadastro de Produto</a></li>
             <li><a href="#entrada-estoque">Entrada de Estoque</a></li>
             <li><a href="#saida-estoque">Saída de Estoque</a></li>
         </ul>
     </nav>
 </header>
 
-<main>
-
+<main class="container">
 
     <!-- ===================== CADASTRO DE PRODUTO ===================== -->
-    <section id="cadastro-produto">
+    <section id="cadastro-produto" class="card-section">
         <h2>Cadastrar Produto</h2>
 
-        <form>
+        <form class="form-grid">
             <fieldset>
                 <legend>Informações Básicas</legend>
 
-                <p>
-                    <label for="prod-nome">Nome do Produto:</label><br>
+                <div class="form-group full-width">
+                    <label for="prod-nome">Nome do Produto:</label>
                     <input type="text" id="prod-nome" name="prod-nome" placeholder="Ex: Placa de Vídeo RTX 4060" required>
-                </p>
+                </div>
 
-                <p>
-                    <label for="prod-sku">SKU:</label><br>
+                <div class="form-group">
+                    <label for="prod-sku">SKU:</label>
                     <input type="text" id="prod-sku" name="prod-sku" placeholder="Ex: GPU-NVD-003" required>
-                </p>
+                </div>
 
-                <p>
-                    <label for="prod-codbarras">Código de Barras:</label><br>
+                <div class="form-group">
+                    <label for="prod-codbarras">Código de Barras:</label>
                     <input type="text" id="prod-codbarras" name="prod-codbarras" placeholder="Ex: 7891234567890">
-                </p>
+                </div>
 
-                <p>
-                    <label for="prod-categoria">Categoria:</label><br>
+                <div class="form-group">
+                    <label for="prod-categoria">Categoria:</label>
                     <select id="prod-categoria" name="prod-categoria" required>
                         <option value="">Selecione</option>
                         <option value="processadores">Processadores</option>
@@ -64,110 +76,110 @@
                         <option value="notebooks">Notebooks</option>
                         <option value="acessorios">Acessórios</option>
                     </select>
-                </p>
+                </div>
 
-                <p>
-                    <label for="prod-marca">Marca:</label><br>
+                <div class="form-group">
+                    <label for="prod-marca">Marca:</label>
                     <input type="text" id="prod-marca" name="prod-marca" placeholder="Ex: NVIDIA" required>
-                </p>
+                </div>
 
-                <p>
-                    <label for="prod-modelo">Modelo:</label><br>
+                <div class="form-group">
+                    <label for="prod-modelo">Modelo:</label>
                     <input type="text" id="prod-modelo" name="prod-modelo" placeholder="Ex: RTX 4060">
-                </p>
+                </div>
 
-                <p>
-                    <label for="prod-descricao">Descrição:</label><br>
-                    <textarea id="prod-descricao" name="prod-descricao" rows="4" cols="50" placeholder="Descrição detalhada do produto"></textarea>
-                </p>
+                <div class="form-group full-width">
+                    <label for="prod-descricao">Descrição:</label>
+                    <textarea id="prod-descricao" name="prod-descricao" rows="3" placeholder="Descrição detalhada do produto"></textarea>
+                </div>
             </fieldset>
 
             <fieldset>
                 <legend>Informações de Estoque</legend>
 
-                <p>
-                    <label for="prod-qtd-inicial">Quantidade Inicial:</label><br>
+                <div class="form-group">
+                    <label for="prod-qtd-inicial">Quantidade Inicial:</label>
                     <input type="number" id="prod-qtd-inicial" name="prod-qtd-inicial" min="0" placeholder="Ex: 20" required>
-                </p>
+                </div>
 
-                <p>
-                    <label for="prod-estoque-min">Estoque Mínimo:</label><br>
+                <div class="form-group">
+                    <label for="prod-estoque-min">Estoque Mínimo:</label>
                     <input type="number" id="prod-estoque-min" name="prod-estoque-min" min="0" placeholder="Ex: 5">
-                </p>
+                </div>
 
-                <p>
-                    <label for="prod-estoque-max">Estoque Máximo:</label><br>
+                <div class="form-group">
+                    <label for="prod-estoque-max">Estoque Máximo:</label>
                     <input type="number" id="prod-estoque-max" name="prod-estoque-max" min="0" placeholder="Ex: 100">
-                </p>
+                </div>
             </fieldset>
 
-            <p>
-                <button type="submit">Cadastrar Produto</button>
-                <button type="reset">Limpar Formulário</button>
-            </p>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Cadastrar Produto</button>
+                <button type="reset" class="btn btn-secondary">Limpar Formulário</button>
+            </div>
         </form>
     </section>
 
     <!-- ===================== ENTRADA DE ESTOQUE ===================== -->
-    <section id="entrada-estoque">
+    <section id="entrada-estoque" class="card-section">
         <h2>Entrada de Estoque</h2>
 
-        <form>
+        <form class="form-grid">
             <fieldset>
                 <legend>Registrar Entrada de Produtos</legend>
 
-                <p>
-                    <label for="entrada-nf">Número da Nota Fiscal:</label><br>
+                <div class="form-group">
+                    <label for="entrada-nf">Número da Nota Fiscal:</label>
                     <input type="text" id="entrada-nf" name="entrada-nf" placeholder="Ex: NF-10234" required>
-                </p>
+                </div>
 
-                <p>
-                    <label for="entrada-data">Data:</label><br>
+                <div class="form-group">
+                    <label for="entrada-data">Data:</label>
                     <input type="date" id="entrada-data" name="entrada-data" required>
-                </p>
+                </div>
 
-                <p>
-                    <label for="entrada-sku">SKU:</label><br>
+                <div class="form-group">
+                    <label for="entrada-sku">SKU:</label>
                     <input type="text" id="entrada-sku" name="entrada-sku" placeholder="Ex: PROC-AMD-001" required>
-                </p>
+                </div>
 
-                <p>
-                    <label for="entrada-produto">Produto:</label><br>
+                <div class="form-group">
+                    <label for="entrada-produto">Produto:</label>
                     <input type="text" id="entrada-produto" name="entrada-produto" placeholder="Ex: Processador AMD Ryzen 5 5600X">
-                </p>
+                </div>
 
-                <p>
-                    <label for="entrada-quantidade">Quantidade:</label><br>
+                <div class="form-group">
+                    <label for="entrada-quantidade">Quantidade:</label>
                     <input type="number" id="entrada-quantidade" name="entrada-quantidade" min="1" required>
-                </p>
+                </div>
 
-                <p>
-                    <label for="entrada-valor">Valor Unitário:</label><br>
+                <div class="form-group">
+                    <label for="entrada-valor">Valor Unitário:</label>
                     <input type="text" id="entrada-valor" name="entrada-valor" placeholder="Ex: R$ 650,00">
-                </p>
+                </div>
 
-                <p>
-                    <label for="entrada-observacao">Observação:</label><br>
-                    <textarea id="entrada-observacao" name="entrada-observacao" rows="3" cols="50" placeholder="Informações adicionais"></textarea>
-                </p>
-
-                <p>
-                    <button type="submit">Registrar Entrada</button>
-                </p>
+                <div class="form-group full-width">
+                    <label for="entrada-observacao">Observação:</label>
+                    <textarea id="entrada-observacao" name="entrada-observacao" rows="3" placeholder="Informações adicionais"></textarea>
+                </div>
             </fieldset>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Registrar Entrada</button>
+            </div>
         </form>
     </section>
 
     <!-- ===================== SAÍDA DE ESTOQUE ===================== -->
-    <section id="saida-estoque">
+    <section id="saida-estoque" class="card-section">
         <h2>Saída de Estoque</h2>
 
-        <form>
+        <form class="form-grid">
             <fieldset>
                 <legend>Registrar Saída de Produtos</legend>
 
-                <p>
-                    <label for="saida-tipo">Tipo de Saída:</label><br>
+                <div class="form-group">
+                    <label for="saida-tipo">Tipo de Saída:</label>
                     <select id="saida-tipo" name="saida-tipo" required>
                         <option value="">Selecione</option>
                         <option value="venda">Venda</option>
@@ -177,52 +189,51 @@
                         <option value="uso-interno">Uso interno</option>
                         <option value="transferencia">Transferência</option>
                     </select>
-                </p>
+                </div>
 
-                <p>
-                    <label for="saida-data">Data:</label><br>
+                <div class="form-group">
+                    <label for="saida-data">Data:</label>
                     <input type="date" id="saida-data" name="saida-data" required>
-                </p>
+                </div>
 
-                <p>
-                    <label for="saida-sku">SKU:</label><br>
+                <div class="form-group">
+                    <label for="saida-sku">SKU:</label>
                     <input type="text" id="saida-sku" name="saida-sku" placeholder="Ex: GPU-NVD-001" required>
-                </p>
+                </div>
 
-                <p>
-                    <label for="saida-produto">Produto:</label><br>
+                <div class="form-group">
+                    <label for="saida-produto">Produto:</label>
                     <input type="text" id="saida-produto" name="saida-produto" placeholder="Ex: Placa de Vídeo RTX 4060">
-                </p>
+                </div>
 
-                <p>
-                    <label for="saida-quantidade">Quantidade:</label><br>
+                <div class="form-group">
+                    <label for="saida-quantidade">Quantidade:</label>
                     <input type="number" id="saida-quantidade" name="saida-quantidade" min="1" required>
-                </p>
+                </div>
 
-                <p>
-                    <label for="saida-pedido">Número do Pedido:</label><br>
+                <div class="form-group">
+                    <label for="saida-pedido">Número do Pedido:</label>
                     <input type="text" id="saida-pedido" name="saida-pedido" placeholder="Ex: PED-5521">
-                </p>
+                </div>
 
-                <p>
-                    <label for="saida-observacao">Observação:</label><br>
-                    <textarea id="saida-observacao" name="saida-observacao" rows="3" cols="50" placeholder="Informações adicionais"></textarea>
-                </p>
-
-                <p>
-                    <button type="submit">Registrar Saída</button>
-                </p>
+                <div class="form-group full-width">
+                    <label for="saida-observacao">Observação:</label>
+                    <textarea id="saida-observacao" name="saida-observacao" rows="3" placeholder="Informações adicionais"></textarea>
+                </div>
             </fieldset>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Registrar Saída</button>
+            </div>
         </form>
     </section>
 
 </main>
 
-<footer>
-    <p>Sistema de Estoque — Tecnologia</p>
-    <p>Versão do sistema: 1.0</p>
-    <p>Ambiente: Demonstração</p>
-    <p>&copy; 2026 Tecnologia</p>
+<footer class="main-footer">
+    <p><strong>techFlow</strong> — Sistema de Gestão de Estoque</p>
+    <p>Versão 1.0 | Ambiente de Demonstração</p>
+    <p>&copy; 2026 Todos os direitos reservados</p>
 </footer>
 
 </body>
